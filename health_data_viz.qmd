@@ -1,0 +1,36 @@
+---
+title: "Health Data Analysis"
+author: "Harley Burrow"
+Date: "2024-12-10"
+output: html 
+---
+
+# Heath Data Viz Analysis
+
+## Load the necessary ibraries
+
+```{r}
+#install.packages("GGally")
+library(tidyverse)
+library(GGally)
+library(readr)
+library(NHANES)
+```
+
+### Load in the NHANES Data
+```{r}
+data("NHANES")
+health_data <- NHANES %>% select(c(Age, BMI, Gender, TotChol))
+summary(health_data)
+head(health_data) %>% View()
+```
+
+## Plot a Histogram of BMI 
+```{r}
+ggplot(health_data, aes(x = BMI)) +
+  geom_histogram(binwidth = 1, fill = "skyblue", colour = "black") +
+  labs(title = "Mean height in Waes is higher than European Average") +
+  theme_gray()
+```
+
+Look at this guide to [Quarto](https://quarto.or/docs/guide)

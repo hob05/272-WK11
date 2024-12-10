@@ -1,5 +1,3 @@
-install.packages(c("readr","GGally","NHANES"))
-
 library(tidyverse)
 library(GGally)
 library(readr)
