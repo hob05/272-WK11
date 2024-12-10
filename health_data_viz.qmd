@@ -1,6 +1,6 @@
 ---
-title: "Health Data Analysis"
-author: "Harley Burrow"
+title: "Health Data Analysis by the most awesome Abel"
+author: "Harley Burrow and Abel is awesome"
 Date: "2024-12-10"
 output: html 
 ---
@@ -31,6 +31,13 @@ ggplot(health_data, aes(x = BMI)) +
   geom_histogram(binwidth = 1, fill = "skyblue", colour = "black") +
   labs(title = "Mean height in Waes is higher than European Average") +
   theme_gray()
+```
+
+```{r}
+val_cor <- health_data %>% select(BMI,Age,TotChol) %>%
+  cor(use = "complete.obs")
+
+ggcorr(val_cor, label = TRUE, label_alpha = TRUE)
 ```
 
 Look at this guide to [Quarto](https://quarto.or/docs/guide)
